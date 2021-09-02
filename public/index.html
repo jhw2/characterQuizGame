@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연예인 맞추기 게임!!</title>
+  <noscript>스크립트가 작동되지 않습니다!</noscript>
+</head>
+<body>
+  <h2 class="title">이름을 맞춰보세요</h2>
+  <form id='gameSetForm'>
+    <div class="row">
+      <label>
+        <strong>사람 수</strong>
+        <input type="number" name="peopleNum" value="3" />
+      </label>
+    </div>
+    <div class="row">
+      <label><input type="radio" name="direction" value="retrun" checked/>왕복</label>
+      <label><input type="radio" name="direction" value="oneway" />편도</label>
+    </div>
+    <input type="submit" name="start" value="게임 시작하기" />
+    <input type="button" name="puse" value="일시정지" />
+  </form>
+
+
+  <div id='imageArea'></div>
+  
+</body>
+</html>

@@ -1,0 +1,37 @@
+$fontColor: #2196f3;
+$fontSize: 52px;
+
+
+.title {
+  color: $fontColor;
+  font-size: $fontSize;
+  text-align: center;
+}
+
+.gImgWrap{position: relative;}
+.onGameStart:not(.puseOn) .gImgWrap::after{
+  content: "1";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #000;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 100%;
+  animation: time 3s linear infinite;
+  transition: all 1s linear;
+}
+
+@keyframes time{
+  0%{content: '1';}
+  50%{content: '2';}
+  100%{content: '3';}
+}
+
+input[name=puse]{display: none;}
+.onGameStart input[name=puse]{display: inline-block;}
+.answerList{display: flex;}
+.answerList li img{width: 100px;}
