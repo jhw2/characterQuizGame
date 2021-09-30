@@ -8,6 +8,8 @@ module.exports = {
     entry: './src/index',
     output: {
         filename: "bundle.js",
+        //library: "mymodule",
+        //libraryTarget: "var",
         path: path.resolve(__dirname, '../build')
     },
     mode: 'development',// none, development, production

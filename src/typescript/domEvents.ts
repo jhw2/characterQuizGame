@@ -1,33 +1,36 @@
 import { Direction, GameSetting } from './typescript';
 
 //게임 시작 이벤트
+const body: HTMLElement | null =  document.querySelector('body');
 const gameSetForm: HTMLElement | null =  document.getElementById('gameSetForm');
 const formData = new FormData(gameSetForm as HTMLFormElement);
 const peopleNum: number = Number(formData.get('peopleNum'));
 const direction: Direction = formData.get('direction') as Direction;
 const gameSetting = new GameSetting(peopleNum, direction);
 
-
-gameSetForm?.addEventListener('submit', (e: Event)=>{
+body?.addEventListener('submit', (e: Event)=>{
     e.preventDefault();
-    const submitBtn = document.querySelector('input[name=start]') as HTMLInputElement;
-    if(document.body.classList.contains('onGameStart')){
-        gameSetting.stopQuiz();
-        submitBtn.value = '게임시작하기';
-        return false;
+    alert()
+    const target = e.target as Element;
+    if(target.id === 'gameSetForm'){
+        const submitBtn = document.querySelector('input[name=start]') as HTMLInputElement;
+        if(document.body.classList.contains('onGameStart')){
+            gameSetting.stopQuiz();
+            submitBtn.value = '게임시작하기';
+            return false;
+        }
+        const formData = new FormData(gameSetForm as HTMLFormElement);
+        const peopleNum: number = Number(formData.get('peopleNum'));
+        const direction: Direction = formData.get('direction') as Direction;
+    
+        gameSetting.changeSetting(peopleNum, direction);
+
+        gameSetting.startQuiz(document.getElementById('imageArea') as HTMLElement, ()=>{
+            submitBtn.value = '게임시작하기';
+        });
+
+        submitBtn.value = '중지';
     }
-    const formData = new FormData(gameSetForm as HTMLFormElement);
-    const peopleNum: number = Number(formData.get('peopleNum'));
-    const direction: Direction = formData.get('direction') as Direction;
-   
-    gameSetting.changeSetting(peopleNum, direction);
-
-    gameSetting.startQuiz(document.getElementById('imageArea') as HTMLElement, ()=>{
-        submitBtn.value = '게임시작하기';
-    });
-
-    submitBtn.value = '중지';
-
 });
 
 const puseBtn:  HTMLElement | null = document.querySelector('input[name=puse]')

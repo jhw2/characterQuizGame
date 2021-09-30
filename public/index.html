@@ -8,24 +8,16 @@
   <noscript>스크립트가 작동되지 않습니다!</noscript>
 </head>
 <body>
-  <h2 class="title">이름을 맞춰보세요</h2>
-  <form id='gameSetForm'>
-    <div class="row">
-      <label>
-        <strong>사람 수</strong>
-        <input type="number" name="peopleNum" value="3" />
-      </label>
-    </div>
-    <div class="row">
-      <label><input type="radio" name="direction" value="retrun" checked/>왕복</label>
-      <label><input type="radio" name="direction" value="oneway" />편도</label>
-    </div>
-    <input type="submit" name="start" value="게임 시작하기" />
-    <input type="button" name="puse" value="일시정지" />
-  </form>
 
+  <menu-ul target='content'>
+    <menu-list pageId='mainPage'>메인</menu-list>
+    <menu-list pageId='test'>테스트</menu-list>
+  </menu-ul>
 
-  <div id='imageArea'></div>
-  
+  <title-ele title='이름을 맞춰보세요'></title-ele>
+
+  <page-ele id="content" pageId='mainPage'></page-ele>
+
 </body>
 </html>
+

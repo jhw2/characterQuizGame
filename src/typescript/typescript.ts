@@ -126,3 +126,12 @@ export class GameSetting implements GameSettingInterface{
     
 
 }
+
+window?.addEventListener('submit', (e: Event)=>{
+    e.preventDefault();
+    alert();
+    const target = e.target as Element;
+    if(target.id === 'gameSetForm'){
+        alert();
+    }
+});
