@@ -20,11 +20,17 @@ class MenuUl extends HTMLElement {
         this.render();
     }
 
-    chMenuHandler() {
+    chMenuHandler(e, target) {
+        e.preventDefault();
+        document.getElementById(target).setAttribute('pageid', e.target.getAttribute('pageid'))
     }
 
     render() {
-        this.shadowRoot.innerHTML =  `<ul onclick='${this.chMenuHandler()}'>${this.innerHTML}</ul>`
+        //console.log(this.chMenuHandler)
+        this.shadowRoot.innerHTML =  `<ul>${this.innerHTML}</ul>`;
+        this.shadowRoot.addEventListener('click', (e)=>{
+            this.chMenuHandler(e, this.getAttribute('target'));
+        });
     }
     
 }
@@ -39,8 +45,8 @@ class MenuList extends HTMLElement {
     }
 
     render() {
-        const pageId = '#'+this.getAttribute('pageId');
-        this.innerHTML =  `<li><a href='${pageId}'>${this.innerHTML}</a></li>`
+        const pageid = this.getAttribute('pageid');
+        this.innerHTML =  `<li><a href='#${pageid}' pageid='${pageid}'>${this.innerHTML}</a></li>`
     }
 }
 
@@ -50,7 +56,7 @@ window.customElements.define('menu-list', MenuList);
 class Page extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        //this.attachShadow({ mode: 'open' });
         this.render();
     }
     //커스텀 엘리먼트 생성될때 실행
@@ -63,14 +69,19 @@ class Page extends HTMLElement {
 
     //bservedAttributes 속성에 나열된 특성에서만 호출된다.
     attributeChangedCallback(arrName, oldVal, newVal){
-        //this.render();
+        console.log('dsfsdf')
+        this.render();
 
     }
-    static get ObservedAttributes(){
-        return ['pageId']
+    static get observedAttributes() {
+        return ['pageid','title']
     }
-    get pageId() {
-        return this.getAttribute('pageId');
+    get pageid() {
+        return this.getAttribute('pageid');
+    }
+
+    get title() {
+        return this.getAttribute('title');
     }
 
     //커스텀 엘리먼트 제거시 호출
@@ -79,10 +90,13 @@ class Page extends HTMLElement {
     }
 
     render() {
-        const pageId = this.getAttribute('pageId');
-        this.shadowRoot.innerHTML = document.getElementById(pageId).innerHTML;
+        const pageid = this.pageid;
+        this.innerHTML = document.getElementById(pageid).innerHTML;
         //this.shadowRoot.innerHTML = this.innerHTML;
     }
 }
 
 window.customElements.define('page-ele', Page);
+
+
+

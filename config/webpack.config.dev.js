@@ -5,11 +5,13 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');// css minify
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-    entry: './src/index',
+    entry: {
+        MYSCRIPT: './src/index'
+    },
     output: {
         filename: "bundle.js",
-        //library: "mymodule",
-        //libraryTarget: "var",
+        library: "MYSCRIPT",
+        libraryTarget: "umd",
         path: path.resolve(__dirname, '../build')
     },
     mode: 'development',// none, development, production

@@ -40,6 +40,7 @@ export class GameSetting implements GameSettingInterface{
     gameTimeout: ReturnType<typeof setTimeout>[] = [];
     images: Images[] = this.getImage();
     currentNum: number = 0;
+    thisForm = document.getElementById('content');
     constructor(private peopleNum: number, private direction: Direction){
         this.peopleNum = peopleNum;
         this.direction = direction;
@@ -66,15 +67,16 @@ export class GameSetting implements GameSettingInterface{
     }
     changeImage(targetImg: HTMLElement, imgInfo: Images){
         const {fileName, answer} = imgInfo;
-        targetImg.setAttribute('src', fileName);
-        targetImg.setAttribute('alt', answer);
+        targetImg?.setAttribute('src', fileName); 
+        targetImg?.setAttribute('alt', answer);
     }
     resetSettings(){
         this.gameTimeout = [];
         this.images = this.getImage();
         this.currentNum = 0;
-        (document.getElementById('targetImg') as HTMLElement).remove();
-        document.body.classList.remove('onGameStart');
+        (document.getElementById('targetImg') as HTMLElement)?.remove();
+        this.thisForm?.classList.remove('onGameStart');
+        this.thisForm?.classList.remove('puseOn');
     }
     showAnswer(){
         let answersHtml = `<ul class='answerList'>`;
@@ -105,7 +107,7 @@ export class GameSetting implements GameSettingInterface{
         if(this.gameTimeout.length > 0){
             this.stopQuiz();
         }
-        document.body.classList.add('onGameStart');
+        this.thisForm?.classList.add('onGameStart');
 
         const images = this.images.slice(this.currentNum, this.images.length);
         element.innerHTML = `<div class='gImgWrap'><img src='${images[0].fileName}' alt='${images[0].answer}' id='targetImg' /><div>`;
@@ -127,11 +129,3 @@ export class GameSetting implements GameSettingInterface{
 
 }
 
-window?.addEventListener('submit', (e: Event)=>{
-    e.preventDefault();
-    alert();
-    const target = e.target as Element;
-    if(target.id === 'gameSetForm'){
-        alert();
-    }
-});
