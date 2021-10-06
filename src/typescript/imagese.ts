@@ -1,0 +1,33 @@
+interface Images {
+    fileName: string;
+    answer: string;
+}
+ const ImageObj: Images[] = [
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMjVfMjgy%2FMDAxNjA2Mjc4Mzg2OTE5.M0gynIlklH7Ju86wh4iGfWJzjO46ly_PJnNFyvifRlEg.70T-_pGQUxUKIuRYK7ySxSDwfx7ReumG1KsSTUGT4xEg.PNG.jma9952%2F%25BD%25BA%25C5%25A9%25B8%25B0%25BC%25A6_2020-11-25_%25BF%25C0%25C8%25C4_12.54.53.png&type=a340', answer: '공유'}, 
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5712%2F2020%2F06%2F10%2F0000060784_001_20200610150820087.jpg&type=a340', answer: '김연경'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5272%2F2020%2F11%2F16%2F0000036234_002_20201116101449564..jpg&type=a340', answer: '김연아'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMDFfMTQw%2FMDAxNjA2ODA5NTEyMzY4.4oqHf3NtfRpaaZUAYb4gQKiEsE67idhAVwIG00nXmagg.FMAOIFvQsxp9T2fprng6GdVxAq4iemxYXfUe_CszSiEg.JPEG.rse5555%2F%25B9%25E9%25C7%25F6.jpg&type=a340', answer: '백현'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F109%2F2021%2F08%2F14%2F0004455918_001_20210814051009907.jpg&type=a340', answer: '이제훈'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA3MTBfNDEg%2FMDAxNjI1OTEyOTg5MzI3.5jcPPAAK2SEpbBlKnn6NlDzzIn4xK6wQ0CQnniOTXYAg.HQwnYf5zPAtGUvfXlNdWkO-eEiyOubHwuwOl9vDnn34g.JPEG.ghdrl7979%2Ftumblr_efc84cf0ccffabd3b3ab0c47780fbe2f_1d4b5e69_540.jpg&type=a340', answer: '카이'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA5MDhfMTYw%2FMDAxNjMxMTEwOTk3MTcy.-LuLLfO5eLEQBZnUpAxmtED4TfcW5fKbDf98dh132TMg.-sM9dVa6KRnFDemfGt1hYiucpU1CmHnHKReBTV042W4g.JPEG.dmstj713%2FIMG_5950.JPG&type=a340', answer: '김태리'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5486%2F2020%2F12%2F30%2F0000157990_006_20201230154552965.jpg&type=a340', answer: '이병헌'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA5MjBfMTI2%2FMDAxNjMyMDY0Nzg3OTE0.p4MT0qGEF_ebPtYdKygxyQi2W5g-Ohn93nRThestmrQg.vEvG3xrIcEvr3Wv2PcfNi4TUMBcXnAEMtL57S-KNdZAg.JPEG.gaeune04%2FPSX%25A3%25DF20210920%25A3%25DF001850.jpg&type=a340', answer: '신민아'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA5MTZfMTky%2FMDAxNjMxNzcyNzcxMDAz.z8vv7OTZ-iGxJJ0-efpZqrmcVOD9h51N0bFJkg4gFLYg.hCLiykQHvrc3DWiPtqId9EoBngH5N_wBc-bRlI7y4FUg.JPEG.bgroom67%2FScreenshot%25A3%25DF20210916%25A3%25AD150245%25A3%25DFNAVER.jpg&type=sc960_832', answer: '유재석'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MDRfMTgg%2FMDAxNjIwMTM3Njc4NjYw.RjxZZxhzU71eRWM7LO_TEUfqgtWSl5NDTXMKR4By_zog.JIded0J8rHFk9_ESzWNMOe6kGfP_MXY3H3Ma-rSwmwwg.JPEG.echo0401%2FIMG_3070.jpg&type=a340', answer: '도경수(D.O.)'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5353%2F2018%2F02%2F22%2F0000302276_001_20180222224933562.jpg&type=a340', answer: '정우성'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA5MThfMjA5%2FMDAxNjMxOTU3NTI1MTQ1.nyv218o4spIpXSuTI8PIqI0i7gskpfoS50PVt_u3VDog.iCGOSXfBNYqE-yqRjsjnTwh6HQikzN2VqXmIHQUeAN0g.JPEG.khk28278%2FSE-db219751-3466-4a8d-8cb1-c5e92bc4b88b.jpg&type=a340', answer: '이정재'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA0MjhfNzkg%2FMDAxNjE5NjA3OTk2NzE0.Nn2svwzVOHEelPVQ1ntiAjs_neKeRmuMOh1LCG6MfJ8g.P33OTRkUPnmRO9RGeJvZj3OPJRemHsONiw1bjU4a0s8g.JPEG.min0539%2FScreenshot%25A3%25DF20210428%25A3%25AD200615%25A3%25DFNAVER.jpg&type=a340', answer: '둘리'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5130%2F2010%2F10%2F20%2F8056320070719155949.jpg&type=a340', answer: '엠마 왓슨'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNjEwMjNfMjI3%2FMDAxNDc3MTkwNzIwNzgx.Dt-ui7j7hJ3XQg4hpvW14YKOfKeiuDOHwFIUPp1yOxsg.8k83H2cCu13IWXei-62mbiWzVbPSuHnLYZdvd-L50tIg.JPEG.mina6273%2FTom_Hanks_face.jpg&type=a340', answer: '톰 행크스'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F415%2F2021%2F10%2F02%2F202109302307510010_5_20211002080023980.jpg&type=a340', answer: '에스파'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5353%2F2021%2F07%2F30%2F0000767043_001_20210730124218806.jpg&type=a340', answer: '박명수'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA4MjZfMSAg%2FMDAxNjI5OTU2MTkyMjEx.LPAuO16JuogdLCpB4yIA9xWuLBqvmJFuZv8gG9u9Lg8g.Lsqpp3WYmcyXzUMwZQgVhgW0NgcpKAyio4pgV_mqh_og.JPEG.kiwi111%2FIMG_2853.jpg&type=a340', answer: '리정'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA5MTdfNDEg%2FMDAxNjMxODQzOTc0Njg5.T2PBl90sDuIOQmMTy6JeUxKCaRLlNWuAToPBD83OJssg.NGSXkdEu330omo5mMdmkdM3SgR1NMQR2MyB8NC8w8okg.JPEG.godtaengoo%2FRemini20210917104510829.jpg&type=ofullfill340_600', answer: '태연'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MDlfMjk5%2FMDAxNjIwNTIyNjA5NjU2.JyBzaAYs8uksd-YrZtwycNgC-qt1A_wUoAvf8xQ6-lgg.YoKcAqDbgL8y62xfFV2F189rSuCE0nH8KDrk_DqBpk4g.JPEG.yundahea%2FScreenshot%25A3%25DF20210429%25A3%25AD134733%25A3%25DFInstagram.jpg&type=a340', answer: '슬기'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fpost.phinf.naver.net%2FMjAyMTA5MDFfMjY2%2FMDAxNjMwNDY2NTQ3MjIw.YocYEhOPAEMkWvGAAvbsVe45dnZyWXIduaHd7GuUszkg.oIcBocn05eFJBT_MbUewShYAUkXbSz1bmqpFdLfIY8cg.JPEG%2FI7-GQ4-2ZH_kmzLUtkg1pKWTVy4I.jpg&type=a340', answer: '조여정'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F112%2F2021%2F10%2F05%2F202110051122089614582_20211005112229_01_20211005112313310.jpg&type=a340', answer: '한소희'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5033%2F2012%2F05%2F09%2F201205092011261001_1.jpg&type=a340', answer: '에릭'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA4MjlfMTM3%2FMDAxNjMwMjExMDkwMzI1.AxfcZHqF7Va2pSbVOmSkXDVTlmIKTOKmLFr6BqvAyd8g.e5RNfYwjXs8v-xDZzahAj8nyqX9NR5f5TCrjdALyUyAg.PNG.kidjina1998%2F20210829_132405.png&type=a340', answer: '김희철'},
+    {fileName: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F421%2F2019%2F11%2F22%2F0004320137_001_20191122153211307.jpg&type=a340', answer: '크리스탈'},
+];
+export default ImageObj;

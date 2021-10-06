@@ -1,24 +1,8 @@
-
-
-import img1 from '../images/공유.jpg';
-import img2 from '../images/김연경.jpg';
-import img3 from '../images/김연아.jpg';
-import img4 from '../images/백현.jpg';
-import img5 from '../images/이제훈.jpg';
-import img6 from '../images/카이.jpg';
-
+import ImageObj from './imagese';
 interface Images {
     fileName: string;
     answer: string;
 }
-const ImageObj: Images[] = [
-    {fileName: img1, answer: '공유'}, 
-    {fileName: img2, answer: '김연경'},
-    {fileName: img3, answer: '김연아'},
-    {fileName: img4, answer: '백현'},
-    {fileName: img5, answer: '이제훈'},
-    {fileName: img6, answer: '카이'},
-];
 
 export type Direction = 'oneway' | 'retrun'; // 편도, 왕복 설정
 interface GameSettingInterface {
@@ -48,6 +32,7 @@ export class GameSetting implements GameSettingInterface{
     changeSetting(peopleNum: number, direction: Direction){
         this.peopleNum = peopleNum;
         this.direction = direction;
+        this.images = this.getImage();
     }
     getSettings(){
         return {peopleNum: this.peopleNum, direction: this.direction}
@@ -108,10 +93,11 @@ export class GameSetting implements GameSettingInterface{
             this.stopQuiz();
         }
         this.thisForm?.classList.add('onGameStart');
+        
 
         const images = this.images.slice(this.currentNum, this.images.length);
         element.innerHTML = `<div class='gImgWrap'><img src='${images[0].fileName}' alt='${images[0].answer}' id='targetImg' /><div>`;
-        
+
         for(let i = 1; i < images.length; i++){
             this.gameTimeout.push(setTimeout(()=>{
                 this.changeImage(document.getElementById('targetImg') as HTMLElement, images[i]);
@@ -120,9 +106,9 @@ export class GameSetting implements GameSettingInterface{
         }
 
         this.gameTimeout.push(setTimeout(()=>{
-            this.resetSettings();
             element.innerHTML = this.showAnswer();
             gameEndCallbak();
+            this.resetSettings();
         }, this.intervalTime * images.length + 1));
     }
     

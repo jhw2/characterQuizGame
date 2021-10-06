@@ -69,12 +69,11 @@ class Page extends HTMLElement {
 
     //bservedAttributes 속성에 나열된 특성에서만 호출된다.
     attributeChangedCallback(arrName, oldVal, newVal){
-        console.log('dsfsdf')
         this.render();
 
     }
     static get observedAttributes() {
-        return ['pageid','title']
+        return ['pageid']
     }
     get pageid() {
         return this.getAttribute('pageid');

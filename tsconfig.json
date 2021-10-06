@@ -9,6 +9,6 @@
       "types": ["node"],
       "typeRoots": ["./node_modules/@types", "@types"],
     },
-    "include": ["src/**/*", "@types"],
-    "exclude": ["/node_modules"]
+    "include": ["src/**/*", "@types", "src/setupProxy.js"],
+    "exclude": ["/node_modules", "src/setupProxy.js"]
   }

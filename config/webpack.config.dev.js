@@ -19,7 +19,13 @@ module.exports = {
         open: true,
         contentBase: path.resolve(__dirname, "../build"),
         index: "index.html",
-        port: 8000
+        port: 9000,
+        proxy: {
+            '/v1': {
+                target: 'https://openapi.naver.com',
+                secure: false,
+              },
+        },
     },
     module: {
         rules: [
