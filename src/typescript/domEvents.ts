@@ -11,7 +11,7 @@ document.getElementById('content')?.addEventListener('submit', (e: Event)=>{
     e.preventDefault();
     const target = e.target as Element;
     const submitBtn = document.querySelector('input[name=start]') as HTMLInputElement;
-    if(document.body.classList.contains('onGameStart')){
+    if(document.getElementById('content')?.classList.contains('onGameStart')){
         gameSetting.stopQuiz();
         submitBtn.value = '게임시작하기';
         return false;

@@ -16,26 +16,25 @@ window.customElements.define('title-ele', Title);
 class MenuUl extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        //this.attachShadow({ mode: 'open' });
         this.render();
     }
-
     chMenuHandler(e, target) {
         e.preventDefault();
         document.getElementById(target).setAttribute('pageid', e.target.getAttribute('pageid'))
     }
-
     render() {
         //console.log(this.chMenuHandler)
-        this.shadowRoot.innerHTML =  `<ul>${this.innerHTML}</ul>`;
-        this.shadowRoot.addEventListener('click', (e)=>{
+        this.innerHTML =  `<ul class="nav justify-content-center">${this.innerHTML}</ul>`;
+        this.addEventListener('click', (e)=>{
             this.chMenuHandler(e, this.getAttribute('target'));
         });
     }
-    
 }
-
 window.customElements.define('menu-ul', MenuUl);
+
+
+
 
 class MenuList extends HTMLElement {
     constructor() {
@@ -46,7 +45,7 @@ class MenuList extends HTMLElement {
 
     render() {
         const pageid = this.getAttribute('pageid');
-        this.innerHTML =  `<li><a href='#${pageid}' pageid='${pageid}'>${this.innerHTML}</a></li>`
+        this.innerHTML =  `<li class="nav-item"><a href='#${pageid}' pageid='${pageid}' class="nav-link">${this.innerHTML}</a></li>`
     }
 }
 
@@ -76,25 +75,20 @@ class Page extends HTMLElement {
         return ['pageid']
     }
     get pageid() {
+        this.classList.remove('onGameStart');
+        this.classList.remove('puseOn');
         return this.getAttribute('pageid');
     }
-
-    get title() {
-        return this.getAttribute('title');
-    }
-
     //커스텀 엘리먼트 제거시 호출
     disconnectedCallback() {
         alert('bye bye');
     }
-
     render() {
         const pageid = this.pageid;
-        this.innerHTML = document.getElementById(pageid).innerHTML;
+        this.innerHTML = '<div class="group">' + document.getElementById(pageid).innerHTML + '</div>';
         //this.shadowRoot.innerHTML = this.innerHTML;
     }
 }
-
 window.customElements.define('page-ele', Page);
 
 

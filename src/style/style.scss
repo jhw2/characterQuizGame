@@ -1,6 +1,8 @@
-$fontColor: #2196f3;
-$fontSize: 52px;
+$fontColor: #18232c;
+$fontSize: 32px;
 
+*{margin: 0;padding: 0;}
+body{background-color: #f4f4f4;}
 
 .title {
   color: $fontColor;
@@ -37,4 +39,32 @@ input[name=puse]{display: none;}
 .answerList li img{width: 100px;}
 
 
-ul>li{color: red;}
+ul, ol, li{list-style: none;}
+a{color: inherit;text-decoration: none;}
+
+body .nav{background-color: #fff;display: flex;justify-content: center;align-items: center;box-shadow: 1px 0px 3px rgba(0,0,0,0.1);}
+body .nav .nav-item{background-color: #fff;}
+body .nav .nav-item .nav-link{display: inline-block;padding: 20px 15px;margin: 0 10px;font-size: 18px;background-color: #fff;}
+.title{margin: 40px 0 40px;}
+#content .group{
+  max-width: 1320px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+#gameSetForm{background-color: #fff;padding: 20px;margin: 0 auto 20px;border-radius: 10px;border: 2px solid #3fa98c;max-width: 400px;}
+#gameSetForm *{background-color: #fff;}
+#gameSetForm .row{margin-bottom: 10px;}
+#gameSetForm .row:last-child{margin-bottom: 0;}
+#gameSetForm .row label{margin: 0 10px 0 0;}
+#gameSetForm .row label.d-flex{display: flex;align-items: center;}
+#gameSetForm .row label strong{display: inline-block;margin-right: 10px;white-space: nowrap;}
+#gameSetForm input[type=number]{border: 1px solid #ccc;height: 35px;width: 100%;;padding: 0 10px;}
+#gameSetForm input[type=submit], #gameSetForm input[type=button]{height: 45px;width: 100%;font-weight: bold;font-size: 15px;color: #fff;border: 0;background-color: #3fa98c;padding: 0 10px;border-radius: 3px;margin-top: 10px;}
+.onGameStart .row{display: none;}
+.onGameStart #gameSetForm input[type=submit]{background-color: #d24e4e;margin-top: 0;}
+.onGameStart #gameSetForm input[type=button]{background-color: #aaa;}
+.onGameStart.puseOn #gameSetForm input[type=button]{background-color: #3fa98c;}
+
+#imageArea{display: flex;justify-content: center;}
